@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#1476F4</color>
+    <color name="colorPrimaryDark">#FF3700B3</color>
+    <color name="SoDarkBleu">#0A0F27</color>
+    <color name="DarkBLeu">#001952</color>
+    <color name="LessDarkerBleu">#043775</color>
+    <color name="TransparentLessDarkerBleu">#A9043775</color>
+    <color name="YoutubeColor">#D8211B</color>
+
+
+    <color name="SoftBleu">#12769E</color>
+    <color name="backgroundColor">#FCF6F3</color>
+    <color name="colorSoftBleu">#BFD4FF</color>
+    <color name="Orange">#FB7A25</color>
+    <color name="OrangeTransparent">#19F27C00</color>
+    <color name="WhiteTransparent">#99FFFFFF</color>
+
+
+    <color name="colorAccent">#D8211B</color>
+    <color name="colorNull">#00000000</color>
+    <color name="colorOuterBleu">#444c5c</color>
+    <color name="colorCrey">#74788c</color>
+    <color name="colorPastelBleu">#EAEFF6</color>
+    <color name="colorIcons">#7C7F81</color>
+    <color name="colorPrimaryText">#1e1e1e</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhiteDark">#DBDBDB</color>
+    <color name="colorPrimaryLight">#CA7474</color>
+    <color name="colorBackground">#e3e6f4</color>
+    <color name="colorSoftBlack">#740C0C0C</color>
+    <color name="colorSoftGrey">#DCDDDF</color>
+
+
 </resources>
