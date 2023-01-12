@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
-    tools:context=".activities.MealsActivity">
-
+    tools:context=".activities.FavoriteMealsActivity">
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:titleTextAppearance="@style/titleBar"
-            android:layout_marginLeft="5dp"
+            app:navigationIcon="@drawable/icon_return"
             android:tint="@android:color/white"           >
 
             <LinearLayout
@@ -42,8 +41,6 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -55,7 +52,7 @@
             android:elevation="0dp">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/categorieCard"
+                android:id="@+id/TitleCard"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_margin="15dp"
@@ -69,46 +66,26 @@
                         android:id="@+id/categorieImageBackground"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:scaleType="centerCrop" />
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/favorite_food"/>
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/TransparentLessDarkerBleu" />
+                        android:background="@color/OrangeTransparent" />
 
-                    <ImageView
-                        android:id="@+id/imgCategorie1"
-                        android:layout_width="150dp"
-                        android:layout_height="119dp"
-                        android:padding="15dp"
-                        android:scaleType="fitStart" />
+
 
                     <TextView
-                        android:id="@+id/strCategory"
-                        android:layout_width="156dp"
-                        android:layout_height="80dp"
-                        android:layout_below="@id/imgCategorie1"
-                        android:layout_marginTop="-50dp"
-                        android:layout_toLeftOf="@id/categorieDescription"
+                        android:id="@+id/favoriteMeals"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
                         android:gravity="center"
-                        android:text="Categorie"
-                        android:textColor="@android:color/white"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/categorieDescription"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_toEndOf="@id/imgCategorie1"
-                        android:ellipsize="end"
-                        android:maxLines="7"
-                        android:padding="15dp"
-                        android:text="Description"
-                        android:textColor="@android:color/white"
-                        android:textSize="14sp"
-                        android:textStyle="italic"/>
+                        android:text="My Favorite Meals"
+                        android:textColor="@color/DarkBLeu"
+                        android:textSize="19dp"
+                        android:textStyle="italic|bold"
+                        />
 
                 </RelativeLayout>
 
@@ -118,7 +95,7 @@
                 android:id="@+id/recyclerTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/categorieCard"
+                android:layout_below="@id/TitleCard"
                 android:layout_marginStart="12dp"
                 android:text="Meals"
                 android:textColor="@color/DarkBLeu"
