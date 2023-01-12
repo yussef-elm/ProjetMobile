@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/DarkBLeu"
+    tools:context=".activities.SplashActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
+        android:src="@drawable/cuisine"
+        app:layout_constraintBottom_toTopOf="@+id/circleImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/TransparentLessDarkerBleu" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
+        android:layout_width="150dp"
+        android:layout_height="171dp"
+        android:src="@drawable/nav_icon"
+        app:layout_constraintBottom_toTopOf="@+id/getStarted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.681" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:src="@drawable/splashbackground"
+        app:layout_constraintBottom_toTopOf="@+id/getStarted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+        app:tint="@color/TransparentLessDarkerBleu" />
+
+    <Button
+        android:id="@+id/getStarted"
+        android:layout_width="219dp"
+        android:layout_height="56dp"
+        android:backgroundTint="@color/TransparentLessDarkerBleu"
+        android:shadowRadius="50"
+        android:text="Get Started"
+        android:textSize="15dp"
+        app:cornerRadius="50dp"
+        app:icon="@android:drawable/ic_menu_directions"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.925"
+        app:useMaterialThemeColors="false" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
