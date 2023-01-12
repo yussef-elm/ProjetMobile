@@ -1,18 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/draw_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity">
+    tools:context=".activities.MainActivity"
+    android:background="@color/colorPastelBleu">
+
+    <View
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="197dp"
+        android:background="@color/DarkBLeu" />
+
+    <include layout="@layout/header" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/searchInput"
+        android:layout_below="@id/appQuote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="15dp"
+        app:cardBackgroundColor="@color/TransparentLessDarkerBleu"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp">
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:id="@+id/search_recipe"
+            android:theme="@style/SearchView"
+            android:drawablePadding="2dp"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search your category"
+            android:searchIcon="@drawable/ic_search"
+            app:queryBackground="@android:color/transparent"
+            android:queryBackground="@android:color/transparent"
+            />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/categoriesTitle"
+        android:text="@string/categories"
+        android:textSize="20sp"
+        android:textColor="@color/DarkBLeu"
+        android:textStyle="bold"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@id/appBar"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ProgressBar
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/progress_circular"
+        android:layout_below="@id/categoriesTitle"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="149dp"
+        android:layout_marginTop="135dp"
+        android:indeterminateTint="@color/DarkBLeu"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="257dp"
+        app:indicatorSize="100dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/categoriesTitle"
+        android:layout_marginTop="7dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="60dp"
+        />
+
+
+    <include
+        layout="@layout/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true" />
+
+
+</RelativeLayout>
