@@ -29,9 +29,9 @@ class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         hiddeAppBar()
-        setBottomNavbar()
         setContentView(R.layout.activity_search)
         recyclerView = findViewById(R.id.search_result)
+        setBottomNavbar()
         setSearchView()
     }
 
@@ -105,12 +105,7 @@ class SearchActivity : AppCompatActivity() {
                 else -> false
             }
         }
-        val mStartActBtn = findViewById<Toolbar>(R.id.toolbarMeals)
-        mStartActBtn.setOnClickListener {
-            startActivity(Intent(this@SearchActivity, MainActivity::class.java))
-        }
     }
-
     fun hiddeAppBar(){
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         supportActionBar?.hide()
