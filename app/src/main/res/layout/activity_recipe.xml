@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activities.RecipeActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/DarkBLeu">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarMeals"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextAppearance="@style/titleBar"
+            android:layout_marginLeft="5dp"
+            android:tint="@android:color/white"           >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:text="Recipe"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_marginBottom="60dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="0dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mealCard"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="15dp"
+                app:cardCornerRadius="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/mealImageBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/TransparentLessDarkerBleu" />
+
+                    <ImageView
+                        android:id="@+id/imgMeal"
+                        android:layout_width="148dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="233dp"
+                        android:padding="15dp"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/chef_logo"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/strCategory"
+                        android:layout_width="224dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/imgMeal"
+                        android:layout_marginLeft="158dp"
+                        android:layout_marginTop="30dp"
+                        android:textColor="@color/white"
+                        android:textSize="22dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        tools:text="chicken" />
+
+                    <TextView
+                        android:id="@+id/areaMeal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginLeft="158dp"
+                        android:layout_alignLeft="@id/imgMeal"
+                        android:layout_below="@id/strCategory"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/strCategory"
+                        app:layout_constraintStart_toStartOf="@+id/strCategory"
+                        app:layout_constraintTop_toBottomOf="@+id/strCategory"
+                        tools:text="US | Lunch" />
+
+                    <TextView
+                        android:id="@+id/strMeal"
+                        android:layout_width="228dp"
+                        android:layout_height="51dp"
+                        android:layout_below="@id/areaMeal"
+                        android:layout_alignLeft="@id/imgMeal"
+                        android:layout_marginLeft="154dp"
+                        android:gravity="bottom|center"
+                        android:text="Meal"
+                        android:textColor="@android:color/white"
+                        android:textSize="20dp"
+                        android:textStyle="italic" />
+
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/mealCard"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ingredientTitle"
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/title_shape"
+                    android:text="Ingredients"
+                    android:padding="2dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TableLayout
+                    android:id="@+id/tableIngredient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_below="@id/ingredientTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/ingredientTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/ingredientTitle">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/ingredient"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:padding="5dp"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="italic"
+                            tools:text="\u2022 Chili" />
+
+                        <TextView
+                            android:id="@+id/measure"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="italic"
+                            tools:text=": 1 pcs" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/instructionsTitle"
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/tableIngredient"
+                    android:layout_marginTop="10dp"
+                    android:text="Instructions"
+                    android:textAlignment="center"
+                    android:background="@drawable/title_shape"
+                    android:textColor="@color/white"
+                    android:padding="2dp"
+                    android:textSize="19sp"
+                    android:textStyle="bold|italic"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintStart_toStartOf="@+id/ingredientTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tableIngredient" />
+
+                <TextView
+                    android:id="@+id/instructions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/instructionsTitle"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="50dp"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/instructionsTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/instructionsTitle"
+                    tools:text="@tools:sample/lorem/random" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/link_youtube"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/ripple_background"
+        android:layout_marginRight="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingTop="12dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="12dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_play_circle"
+            app:tint="@color/white"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="18dp"
+            android:text="Play"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <include layout="@layout/bottom_nav" />
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
