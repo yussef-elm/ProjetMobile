@@ -10,12 +10,15 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.enseirb.foodrecipeapp.R
 import com.enseirb.foodrecipeapp.models.Meal
 import com.enseirb.foodrecipeapp.services.RecipeService
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class RecipeActivity : AppCompatActivity() {
@@ -37,6 +40,7 @@ class RecipeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe)
         hiddeAppBar()
+        setBottomNavbar()
         var recipeType = intent.getStringExtra("recipeType")
         toolbarTitle = findViewById(R.id.Title)
         mealImageBackground = findViewById(R.id.mealImageBackground)
@@ -111,7 +115,43 @@ class RecipeActivity : AppCompatActivity() {
 
     }
 
-
+    fun setBottomNavbar(){
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav_menu)
+        bottomNavigationView.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.nav_home -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent);
+                    Toast.makeText(this, "Home clicked", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.nav_favorite -> {
+                    val intent = Intent(this, FavoriteMealsActivity::class.java)
+                    startActivity(intent);
+                    Toast.makeText(this, "Favorite clicked", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.nav_search -> {
+                    val intent = Intent(this, SearchActivity::class.java)
+                    startActivity(intent);
+                    Toast.makeText(this, "Search clicked", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.nav_random -> {
+                    val intent = Intent(this, RecipeActivity::class.java)
+                    intent.putExtra("recipeType", "Random")
+                    startActivity(intent);
+                    Toast.makeText(this, "Random Recipe clicked", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                else -> false
+            }
+        }
+        val mStartActBtn = findViewById<Toolbar>(R.id.toolbarMeals)
+        mStartActBtn.setOnClickListener {
+            startActivity(Intent(this@RecipeActivity, MainActivity::class.java))
+        }
+    }
 
     fun  hiddeAppBar(){
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN

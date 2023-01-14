@@ -9,7 +9,9 @@
     <color name="LessDarkerBleu">#043775</color>
     <color name="TransparentLessDarkerBleu">#A9043775</color>
     <color name="YoutubeColor">#D8211B</color>
-
+    <color name="purple_700">#FF3700B3</color>
+    <color name="purple_200">#CE93D8</color>
+    <color name="teal_200">#80CBC4</color>
 
     <color name="SoftBleu">#12769E</color>
     <color name="backgroundColor">#FCF6F3</color>
