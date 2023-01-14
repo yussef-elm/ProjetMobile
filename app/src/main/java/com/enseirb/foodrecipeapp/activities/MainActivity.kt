@@ -22,6 +22,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
@@ -91,6 +92,7 @@ class MainActivity : AppCompatActivity() {
         return filteredlist
     }
 
+
     fun setBottomNavbar(){
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav_menu)
         bottomNavigationView.setOnItemSelectedListener {
@@ -123,12 +125,7 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
-        val mStartActBtn = findViewById<Toolbar>(R.id.toolbarMeals)
-        mStartActBtn.setOnClickListener {
-            startActivity(Intent(this@MainActivity, MainActivity::class.java))
-        }
     }
-
     fun hiddeAppBar(){
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         supportActionBar?.hide()
