@@ -17,8 +17,8 @@ Food Recipe App
 - Optimizing the app for different screen sizes and resolutions
 
 ## Captures d'écran de l'Interface Utilisateur 
-![App Screenshot1](Screenshots/login.png)
-![App Screenshot2](screenshot2.png)
+![App Screenshot1](Screenshots/login.jpg)
+![App Screenshot2](screenshot2.jpg)
 
 ## Binôme
 - EL AMOUD Youssef
