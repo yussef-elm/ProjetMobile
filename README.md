@@ -23,14 +23,15 @@ Cette application est réalisée par le binome :
 - Lorsqu'on choisit une recette, on affiche les détails suivants : 
 
   - Nom de la recette
+  - Les instructions
   - Les ingrédients et leurs mesures
   - Un lien vers la vidéo Youtube si elle existe
  
- - L'utilisateur peut ajouter une recette à ces favoris.
+ - L'utilisateur peut ajouter et supprimer une recette à sa collection de favoris.
 
 - L'utilisateur peut recevoir une recette aléatoire. 
 - L'utilisateur peut rechercher une catégorie.
-- L'utilisateur peut filtrer selon un ingrédient.
+- L'utilisateur peut filtrer des recettes selon un ingrédient.
 
 ## Les branches de développement :
 
@@ -86,6 +87,12 @@ Cette application est réalisée par le binome :
 </p>
 
 ## Difficultés Rencontrées :
+-La gestion des conflits de version lors du travail en parallèle sur le même code source
+-La consommation élevée de Android Studio des ressources de la machine, comme la mémoire vive et le processeur, qui peut entraîner des ralentissements et des plantages de l'application
+-La compréhension de la syntaxe et des concepts de programmation de Kotlin, qui sont un peu différents de ceux de la programmation Java
+-La mise en place de la fonctionnalité d'enregistrement de recettes favorites pour une consultation ultérieure
+-La difficulté à gérer les erreurs qui sont parfois incompréhensible.
+-La difficulté à trouver un maniére de séparer les responsabilités entre les différents classes de l'application, tels que les services qui consomme l'API et les Activities.
 
 
 
